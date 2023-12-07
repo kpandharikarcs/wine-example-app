@@ -52,10 +52,10 @@ This app predicts the ** Quality of Wine **  using **wine features** input via t
 """)
 
 #read in wine image and render with streamlit
-image = Image.open('wine_image.png')
+image = Image.open('wine_image.jpg')
 st.image(image, caption='wine company',use_column_width=True)
 
-st.sidebar.header('User Input Parameters') #user input parameter collection with streamlit side bar
+st.sidebar.header('User Input Parameters for Mixing') #user input parameter collection with streamlit side bar
 
 
 def get_user_input():
@@ -97,7 +97,7 @@ def get_user_input():
 user_input_df = get_user_input()
 processed_user_input = data_preprocessor(user_input_df)
 
-st.subheader('User Input parameters')
+st.subheader('User Input Parameters for mixing')
 st.write(user_input_df)
 
 prediction = model.predict(processed_user_input)
